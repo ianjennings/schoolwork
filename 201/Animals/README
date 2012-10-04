@@ -1,0 +1,25 @@
+1. What is the path to this directory?  What command did you use to find it?
+
+2. What are the subdirectories within this directory?  What command did you use to find it?
+
+3. From the CURRENT directory (Animals), use a command to list the files within "Furry".  What is that command?  What are the files?
+
+4.  Navigate into the directory "Furry".  What command did you use?
+
+5.  Fish aren't furry!  Delete this file.  What command did you use?
+
+6.  From the CURRENT directory (Furry), use a command to list the files within "Scary".  What is that command?  What are the files?
+
+6.  Lions are both scary and furry.  Copy this file into the directory "Scary".  What command did you use?
+
+7.  Using one command, navigate from "Furry" into "Scary".  What command did you use?
+
+8.  Dinosaurs are extinct!  Move this file into the directory "Extinct".  What command did you use?
+
+9.  What are the current permissions for the file "snake"?  What command did you use to find this?
+
+10.  Change the permissions on the file "snake" so that owner, group, and everyone can read and write to it.  What command did you use?
+
+11.  Change the permissions of the file "spider" so that only owner and group (not everyone) can read it.  What command did you use?
+
+12.  Download the (edited) version of this file with answers and the changed files.  Zip the root folder (Animals) and upload it as part of Assignment 8.  You may remove the folders and files from your eden account when you are done!

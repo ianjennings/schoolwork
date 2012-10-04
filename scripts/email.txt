@@ -1,0 +1,52 @@
+<?php
+$recipient = "feedback_script@mailinator.com"; // who the email is being sent to
+$email_subject = "New Feedback!";
+
+$submit = "submit"; // the name of your submit button (name="x")
+$required_fields = array("name", "radios", "message"); // fields required to send the mail. they must match the name="x" part of the input html EXACTLY
+
+$error = FALSE;
+
+if (isset($_POST[$submit])){
+
+	unset($_POST[$submit]);
+	
+	foreach($required_fields as $value){
+		if (empty($_POST[$value])){
+			$missing_fields[] = $value;
+			$comma_separated = implode(", ", $missing_fields);
+		}
+	}
+	
+	if (isset($missing_fields)){
+		
+		$error = "Missing fields: $comma_separated";
+		
+	} else {
+		
+		foreach($_POST as $field => $value){
+			if (!empty($value)){
+				
+				if(is_array($value)){
+					$value = implode(", ", $value);
+				}
+				
+				$message_text .= ucwords($field) . "\n----------\n$value\n\n";
+			
+			}
+		}
+		
+		if(!mail($recipient, $email_subject, $message_text, $header)){
+			$error = "Unable to send mail. Check email address.";
+		}
+									  
+	} 
+	
+	// here we output a message of success if the email was sent, or an error if we have any
+	if ($error){
+		echo "<div class=\"message_error\"><b>Error:</b> $error</div>";
+	} else {
+		echo "<div class=\"message_sent\">Message sent. Thanks!</div>";
+	}
+}
+?>
